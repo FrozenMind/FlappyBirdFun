@@ -9,6 +9,7 @@ import com.flappybird.game.FlappyBird;
  * Created by valentin on 7/29/17.
  */
 
+//menu screen
 public class MenuState extends State{
     private Texture background;
     private Texture playBtn;
@@ -22,6 +23,7 @@ public class MenuState extends State{
 
     @Override
     public void handleInput() {
+        //on click anywhere start an game
         if(Gdx.input.justTouched()){
             this.gsm.set(new PlayState(this.gsm));
         }
@@ -36,7 +38,8 @@ public class MenuState extends State{
     public void render(SpriteBatch sb) {
         sb.setProjectionMatrix(cam.combined);
         sb.begin(); //open box
-        sb.draw(this.background, 0, 0);  //texture,x,y,{width},{height}
+        //draw bg & playbutton
+        sb.draw(this.background, 0, 0); //texture,x,y,{width},{height}
         sb.draw(this.playBtn, cam.position.x - playBtn.getWidth() / 2, cam.position.y);
         sb.end();
     }

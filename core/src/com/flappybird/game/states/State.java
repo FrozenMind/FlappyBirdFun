@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.Vector3;
  * Created by valentin on 7/29/17.
  */
 
+//abstract class for states, to make sure all methods are there
 public abstract class State {
     protected OrthographicCamera cam;
     protected Vector3 mouse;

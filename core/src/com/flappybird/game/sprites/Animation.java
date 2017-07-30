@@ -7,7 +7,7 @@ import com.badlogic.gdx.utils.Array;
  * Created by valentin on 7/30/17.
  */
 
-//a frame is a single pictures of a sprite
+//fly animation for bird
 public class Animation {
     private Array<TextureRegion> frames; //store all frames
     private float maxFrameTime; //how long a frame should stay
@@ -38,7 +38,7 @@ public class Animation {
         if(this.frame >= this.frameCount)
             this.frame = 0;
     }
-
+    //return current frame
     public TextureRegion getFrame(){
         return this.frames.get(this.frame);
     }

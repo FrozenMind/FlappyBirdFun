@@ -11,12 +11,13 @@ import java.util.Random;
  * Created by valentin on 7/30/17.
  */
 
+//one tube is a top tube & a bottom tube
 public class Tube {
     public static final int TUBE_WIDTH=52;
     private static final int FLUCTUATION=130;   //tube can move up & down between 0 and this
     private static final int TUBE_GAP=100;  //min tube gap between both tubes
     private static final int LOWEST_OPENING=120;    //lowest top of the bottom tube
-    private Texture topTube, bottomTube;
+    private Texture topTube, bottomTube; //texutres for tube
     private Vector2 posTopTube, posBotTube;
     private Rectangle boundsTop, boundsBot;
     private Random rand;
@@ -26,8 +27,8 @@ public class Tube {
         this.bottomTube = new Texture("bottomtube.png");
         this.rand = new Random();
 
-        this.posTopTube = new Vector2(x, this.rand.nextInt(this.FLUCTUATION) + this.TUBE_GAP + this.LOWEST_OPENING);
-        this.posBotTube = new Vector2(x, this.posTopTube.y - this.TUBE_GAP - this.bottomTube.getHeight());
+        this.posTopTube = new Vector2(x, this.rand.nextInt(this.FLUCTUATION) + this.TUBE_GAP + this.LOWEST_OPENING); //y is a random number for top
+        this.posBotTube = new Vector2(x, this.posTopTube.y - this.TUBE_GAP - this.bottomTube.getHeight()); //bot is top - gap
         //create invisible rectangle to handle collision
         this.boundsTop = new Rectangle(this.posTopTube.x, this.posTopTube.y, this.topTube.getWidth(), this.topTube.getHeight()); //x,y,width,height
         this.boundsBot = new Rectangle(this.posBotTube.x, this.posBotTube.y, this.bottomTube.getWidth(), this.bottomTube.getHeight());
